@@ -195,7 +195,8 @@ foreach ($data as $row) {
 ## Git
 
 - один коммит должен решать одну задачу;
-- обязательно использование информативных названий коммитов;
+- обязательно использование информативных заголовков коммитов;
+- заголовок коммита (первая строка commit message'а) **должен** быть в повелительном наклонении (никаких `fixed`, `added` etc). В больинстве случаев подойдёт такой подход: заголовок коммита должен служить продолжением предложения "If applied, this commit will " (`fix bug #123`, `add ping command`, `refactor shop/product/list.php view`). Больше информации и обоснований [тут](http://chris.beams.io/posts/git-commit/)
 - коммиты не должны содержать автоматических коммитов наподобие `Merge branch 'branch-name' of github.com:user-name/repo-name`. Для этого отлично подходит [git flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow/) или хотябы `git stash`;
 - перед коммитом необходимо проверить работоспособность с помощью тестов;
 - issue должен обязательно содержать описание проблемы с примером;
