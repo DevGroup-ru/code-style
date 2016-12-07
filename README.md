@@ -153,6 +153,22 @@ foreach ($data as $row) {
 - {{%devgroup_measure}}
 - {{%dotplant_product_category}}
 
+При написании запросов в коде:
+
+* заключайте имя столбца в двойные квадратные скобки `[[column_name]]`;
+* заключайте имя таблицы в двойные фигурные скобки `{{table_name}}`.
+
+Yii DAO будет автоматически преобразовывать подобные конструкции в SQL в правильно экранированные имена таблиц и столбцов.
+
+Например,
+
+```php
+<?php
+    // executes this SQL for MySQL: SELECT COUNT(`id`) FROM `employee`
+    $count = Yii::$app->db->createCommand("SELECT COUNT([[id]]) FROM {{employee}}")
+                ->queryScalar();
+```
+
 ## Переводы
 
 - Везде, где используется вывод текста пользователю, неодходимо использовать метод `Yii::t()`;
